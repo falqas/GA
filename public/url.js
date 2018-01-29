@@ -31,6 +31,10 @@ function sendData(searchType) {
         // Index response data
         indexedData = {};
 
+        if (response.Error) {
+            return;
+        }
+
         // Rename keys to imdb IDs for easier reference
         response.Search.forEach(function (item) {
             var oid = item.imdbID;
@@ -68,6 +72,7 @@ function populateResults(indexedData, faves) {
     section.appendChild(resultsHeading);
     section.appendChild(results);
 
+    // iterate through indexedData (response from omdb), and build up DOM elements one by one....
     for (var oid in indexedData) {
         var result = indexedData[oid];
         var title = document.createElement('h3');
@@ -102,6 +107,7 @@ function populateResults(indexedData, faves) {
         article.appendChild(a);
         results.appendChild(article);
 
+        // increment results count
         totalResults++;
 
         resultsHeading.textContent = 'Results:' + totalResults;

@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.use(bodyParser.json());
+
 app.use('/', express.static(path.join(__dirname, 'public')));
+
 app.get('/favorites', function (req, res, next) {
     var data = fs.readFileSync('./data.json');
     res.setHeader('Content-Type', 'application/json');
