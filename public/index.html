@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <h1>Welcome to the OMDb API!</h1>
+    <!-- <input id="title" type="text" />
+    <input type="button" value="Submit" /> -->
+    <form id="searchForm">
+        <label for="searchForm">Enter movie title:</label>
+        <input id="search" name="name" value="Star Wars" onfocus="if (this.value==='Star Wars') this.value='';">
+        <input type="submit" value="Search!">
+    </form>
+
+    <input id="faves" type="button" value="Favorites" />
+
+    <section>
+    </section>
+
+    <!-- Open The Modal -->
+
+    <div id="modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="title"></h3>
+            <p id="plot" class="modal-text"></p>
+            <p id="details" class="modal-text"></p>
+        </div>
+
+    </div>
+
+    <script src="./url.js"></script>
+
+</body>
+
+</html>
