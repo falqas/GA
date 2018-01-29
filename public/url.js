@@ -1,4 +1,4 @@
-var omdbUrl = 'http://www.omdbapi.com/';
+var omdbUrl = 'https://www.omdbapi.com/';
 var apiKey = 'a04790d0'; // don't do this...
 var totalResults, indexedData;
 
